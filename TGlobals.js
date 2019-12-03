@@ -21,7 +21,7 @@ var cardBookObj = {
 		//{type: "img", value: "images/LO_ChestnutOak01_300.jpg"},
 		//{type: "mov", value: "https://malao.s3.amazonaws.com/medium_mov.mp4"},
 		//{type: "iframe", value: "https://drive.google.com/file/d/1b7_ysW9IjKiEoWCzQNxpTWQ4aM-J1Hss/view"},
-		{type: "mov", value: "images/medium_mov.mp4"},
+		{type: "mov", value: "https://prezlife.github.io/MALAO/images/medium_mov.mp4"},
 		{type: "quiz", answerOptions: [
 			{text: "Bluebird", value: false},
 			{text: "Carolina Chickadee", value: false},
