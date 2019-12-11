@@ -1,20 +1,11 @@
+//console.log(document.body.innerHTML);
+buildWindow('window', uiWindowObj2);
+//console.log(document.body.innerHTML);
+openSideNav('main2');
+openSideNav('main4');
 
-//Add header, main, and footer sections to the main window
-buildWindowTemplate('window');
-
-//Populate the header
-buildHeader('header','This is the Header');
-
-//Build a main container with a side Nav
-buildContainerWithSideNav('main', container1Obj);
-openSideNav('main');
-
-//buildContainerWithSideNav('mainBody', container2Obj);
-//closeSideNav('mainBody');
-
-//Display cards in mainBody
-displayCard('mainBody', currentCard);
-
+//Display cards in the inner-inner main container
+displayCard('main5', currentCard);
 
 function dispIntroduction() {
 	alert("Got Here");
@@ -84,15 +75,16 @@ function checkAns(eleId, ansValue) {
 	if (ansValue == "true") {
 		document.getElementById(eleId).style.backgroundColor = "green";
 		document.getElementById(eleId).style.border = "4px solid green";
-		setTimeout(selectNextCard, 500);
+		setTimeout(selectNextCard(), 500);
 	} else {
 		document.getElementById(eleId).style.backgroundColor = "red";
 		document.getElementById(eleId).style.border = "4px solid red";
 	};
 };
 
+//*** The element ID needs to be "passed in"
 function selectNextCard() {
 	currentCard = cardList[1];
-	displayCard('mainBody', currentCard);
+	displayCard(eleId, currentCard);
 };
 
