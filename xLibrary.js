@@ -55,7 +55,7 @@ function buildSideNavMainHeader(eleId, mainHeaderObj) {
 	var txt = "";
 	txt += "<div class='w3-row w3-card'>";
 	txt += "<div class='w3-third'><button id='" + openNavId + "' class='w3-button w3-xlarge' onclick='openSideNav(\"" + openNavId + "\")'>&#9776;</button></div>";
-	txt += "<div class='w3-third'><h4 class='w3-center'>" + mainHeaderObj.title + "</h4></div>";
+	txt += "<div class='w3-third'><h4 class='w3-center' id=" + eleId + "Title" + ">" + mainHeaderObj.title + "</h4></div>";
 	txt += "</div>";
 	document.getElementById(eleId).innerHTML = txt;
 };

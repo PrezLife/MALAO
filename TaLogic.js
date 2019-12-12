@@ -2,13 +2,22 @@
 buildWindow('window', uiWindowObj2);
 //console.log(document.body.innerHTML);
 openSideNav('main2');
-openSideNav('main4');
+//openSideNav('main4');
 
 //Display cards in the inner-inner main container
-displayCard('main5', currentCard);
+//displayCard('main3', currentCard);
 
-function dispIntroduction() {
-	alert("Got Here");
+function displayIntroduction(eleId, titleId, title) {
+	var txt = "";
+	txt += "<h4>This is the Introduction body</h4>";
+	document.getElementById(eleId).innerHTML = txt;
+	document.getElementById(titleId).innerHTML = title;
+	
+};
+
+function displayLesson(eleId, titleId, title) {
+	document.getElementById(titleId).innerHTML = title;
+	displayCard(eleId, currentCard);
 };
 
 function displayCard(eleId, cardName) {

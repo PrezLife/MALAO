@@ -5,13 +5,13 @@ var uiWindowObj2 = {
 	header1: {title: "This is the uiWindowObj Header",},
 	main1: {
 		sideNavMenu2: [
-			{title: "Introduction", function: "dispIntroduction()"},
-			{title: "Dashboard", function: "dispDashboard()"},
+			{title: "Introduction", function: "displayIntroduction(\"main3\", \"sideNavMainHeader2Title\", \"Introduction\")"},
+			{title: "Upland Birds", function: "displayLesson(\"main3\", \"sideNavMainHeader2Title\", \"Upland Birds\")"},
 		],
 		main2: {
-			sideNavMainHeader2: {title:"This is the inner header",},
+			sideNavMainHeader2: {title: "This is the default inner header",},
 			main3: {
-				
+				/*
 				sideNavMenu4: [
 					{title: "Container 1", function: "dispIntroduction()"},
 					{title: "Container 2", function: "dispDashboard()"},
@@ -20,32 +20,13 @@ var uiWindowObj2 = {
 					sideNavMainHeader4: {title:"This is the inner-inner header",},
 					main5: {},
 				},
-			
+				*/
 			},
 		},
 	},
 	footer1: {title: "This is the Footer",},
 };
 
-
-
-
-var container1Obj = {
-	header: "Main Container Header",
-	navMenu: [
-		{title: "Introduction", function: "dispIntroduction()"},
-		{title: "Dashboard", function: "dispDashboard()"},
-	],
-};
-//console.log(container1Obj);
-
-var container2Obj = {
-	header: "Inner Container Header",
-	navMenu: [
-		{title: "Container 1", function: "dispIntroduction()"},
-		{title: "Container 2", function: "dispDashboard()"},
-	],
-};
 
 var cardBookObj = {
 	card01: [
