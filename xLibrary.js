@@ -39,11 +39,11 @@ function buildSideNavMenu(sideNavID, sideNavObj) {
 	var txt = "";
 	txt += "<div class='w3-sidebar w3-bar-block w3-card w3-light-gray' style='display:block'>";
 	txt += "<button class='w3-bar-item w3-large' onclick='closeSideNav(\"" + sideNavID + "\")'>Close &times;</button>";
+	
 	var txtList = "";
-
-	sideNavObj.forEach(function(ele) {
-		txtList += "<button class='w3-bar-item w3-button' onClick='" + ele.function + "'>" + ele.title + "</button>";
-	});
+	for (item in sideNavObj) {
+		txtList += "<button id=" + item + " class='w3-bar-item w3-button sideNavItem' onClick='" + sideNavObj[item].function + "'>" + sideNavObj[item].title + "</button>";	
+	};
 	txt += txtList;
 	txt += "</div>";
 	document.getElementById(sideNavID).innerHTML = txt;
@@ -78,3 +78,25 @@ function closeSideNav(eleId) {
 	document.getElementById("sideNavMenu"+divLevelNum).style.display = "none";
 	document.getElementById("openNav"+(divLevelNum)).style.visibility = "visible";
 };
+
+//Function to select a topic
+//	itemId - Side Nav menu item element id
+//	mainId - Window to display content in
+//	functionName - Content display function to call
+//	headerTitleId - Id for displaying header title
+//	headerTitle - Header Title to display
+function selectSideNavItem(itemId, mainId, functionName, headerTitleId, headerTitle ) {
+	//Highlight the topic that currently is selected, and unhighlight all the others
+	var itemList = document.getElementsByClassName("sideNavItem");
+	for (var i = 0; i < itemList.length; i++) {
+		if (itemList[i].id == itemId) {
+			itemList[i].className += " w3-hover-blue";
+		} else {
+		itemList[i].className = itemList[i].className.replace(" w3-hover-blue","");
+		};
+	};
+	//Call the content display function
+	var evalString = functionName + "(\"" + mainId + "\",\"" + headerTitleId + "\",\"" + headerTitle + "\")";
+	eval(evalString);
+};
+

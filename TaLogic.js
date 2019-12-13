@@ -4,18 +4,21 @@ buildWindow('window', uiWindowObj2);
 openSideNav('main2');
 //openSideNav('main4');
 
-//Display cards in the inner-inner main container
-//displayCard('main3', currentCard);
+
 
 function displayIntroduction(eleId, titleId, title) {
+	//Display the title
+	document.getElementById(titleId).innerHTML = title;
 	var txt = "";
 	txt += "<h4>This is the Introduction body</h4>";
-	document.getElementById(eleId).innerHTML = txt;
-	document.getElementById(titleId).innerHTML = title;
-	
+	document.getElementById(eleId).innerHTML = txt;	
 };
 
 function displayLesson(eleId, titleId, title) {
+	//Display the title
+	document.getElementById(titleId).innerHTML = title;
+
+	//Display a lesson cardd
 	document.getElementById(titleId).innerHTML = title;
 	displayCard(eleId, currentCard);
 };

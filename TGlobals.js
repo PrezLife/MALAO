@@ -4,10 +4,10 @@
 var uiWindowObj2 = {
 	header1: {title: "This is the uiWindowObj Header",},
 	main1: {
-		sideNavMenu2: [
-			{title: "Introduction", function: "displayIntroduction(\"main3\", \"sideNavMainHeader2Title\", \"Introduction\")"},
-			{title: "Upland Birds", function: "displayLesson(\"main3\", \"sideNavMainHeader2Title\", \"Upland Birds\")"},
-		],
+		sideNavMenu2: {
+			item01: {title: "Introduction", function: "selectSideNavItem(\"item01\", \"main3\", \"displayIntroduction\", \"sideNavMainHeader2Title\", \"Introduction\")"},
+			item02: {title: "Upland Birds", function: "selectSideNavItem(\"item02\", \"main3\", \"displayLesson\", \"sideNavMainHeader2Title\", \"Upland Birds\")"},
+		},
 		main2: {
 			sideNavMainHeader2: {title: "This is the default inner header",},
 			main3: {
