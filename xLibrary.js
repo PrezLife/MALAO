@@ -37,7 +37,7 @@ function buildFooter(footerID, footerObj) {
 function buildSideNavMenu(sideNavID, sideNavObj) {
 	//Build the side Nav and save it to the DOM
 	var txt = "";
-	txt += "<div class='w3-sidebar w3-bar-block w3-card w3-light-gray' style='display:block'>";
+	txt += "<div class='w3-sidebar w3-bar-block w3-card w3-animate-left w3-light-gray' style='display:block'>";
 	txt += "<button class='w3-bar-item w3-large' onclick='closeSideNav(\"" + sideNavID + "\")'>Close &times;</button>";
 	
 	var txtList = "";
