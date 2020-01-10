@@ -64,8 +64,8 @@ function buildSideNavMainHeader(eleId, mainHeaderObj) {
 //Open a side nav
 function openSideNav(eleId) {
 	var divLevelNum = Number(eleId.substring(eleId.length-1, eleId.length));
-	document.getElementById("main"+divLevelNum).style.marginLeft = "20%";
-	document.getElementById("sideNavMenu" + divLevelNum).style.width = "20%";
+	document.getElementById("main"+divLevelNum).style.marginLeft = "200px";
+	document.getElementById("sideNavMenu" + divLevelNum).style.width = "200px";
 	document.getElementById("sideNavMenu" + divLevelNum).style.display = "block";
 	//console.log(eleId+"mainsideNavMainHeaderOpenNav");
 	document.getElementById("openNav" + divLevelNum).style.visibility = 'hidden';
@@ -74,7 +74,7 @@ function openSideNav(eleId) {
 //Close a side nav
 function closeSideNav(eleId) {
 	var divLevelNum = Number(eleId.substring(eleId.length-1, eleId.length));
-	document.getElementById("main"+divLevelNum).style.marginLeft = "0%";
+	document.getElementById("main"+divLevelNum).style.marginLeft = "0px";
 	document.getElementById("sideNavMenu"+divLevelNum).style.display = "none";
 	document.getElementById("openNav"+(divLevelNum)).style.visibility = "visible";
 };
