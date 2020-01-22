@@ -40,7 +40,7 @@ function buildTabBar(tabBarId, tabBarObj) {
 	
 	var txtList = "";
 	for (item in tabBarObj) {
-		txtList += "<button id=" + item + " class='w3-bar-item w3-button tabBarItem' onClick='" + tabBarObj[item].function + "'>" + tabBarObj[item].title + "</button>";
+		txtList += "<button id=" + item + " class='w3-bar-item w3-button w3-border tabBarItem' onClick='" + tabBarObj[item].function + "'>" + tabBarObj[item].title + "</button>";
 	};
 	txt += txtList;
 	txt += "</div>";
