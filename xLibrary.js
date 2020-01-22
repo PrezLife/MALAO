@@ -25,8 +25,9 @@ function buildHeader(headerId, headerObj) {
 	var txt = "";
 	//Build the header container:  a w3-row split into thirds
 	txt += "<div class='w3-row w3-card " + headerObj.class + "'>";
-		txt += "<div class='w3-third'><h3></h3></div>";
-		txt += "<div class='w3-third'><h3 class='w3-center' id=" + headerId + "Title" + ">" + headerObj.title + "</h3></div>";
+		//txt += "<div class='w3-third'><h3></h3></div>";
+		//txt += "<div class='w3-third'><h3 class='w3-center' id=" + headerId + "Title" + ">" + headerObj.title + "</h3></div>";
+		txt += "<h3 class='w3-center' id=" + headerId + "Title" + ">" + headerObj.title + "</h3>";
 	txt += "</div>";
 	document.getElementById(headerId).innerHTML = txt;
 };
