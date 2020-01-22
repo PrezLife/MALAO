@@ -1,7 +1,7 @@
 //console.log(document.body.innerHTML);
 buildWindow('window', uiWindowObj2);
 //console.log(document.body.innerHTML);
-openSideNav('main2');
+//openSideNav('main2');
 //openSideNav('main4');
 
 

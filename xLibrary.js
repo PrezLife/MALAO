@@ -15,29 +15,43 @@ function buildWindow(eleId, eleObj) {
 			case "footer": buildFooter(key, eleObj[key]); break;
 			case "sideNavMenu": buildSideNavMenu(key, eleObj[key]); break;
 			case "sideNavMainHeader": buildSideNavMainHeader(key, eleObj[key]); break;
+			case "tabBar": buildTabBar(key, eleObj[key]); break;
 			default: console.log("Ooops", key); break; 
 		};
 	};
 };
 
-function buildHeader(headerID, headerObj) {
+function buildHeader(headerId, headerObj) {
 	var txt = "";
 	//Build the header container:  a w3-row split into thirds
-	txt += "<div class='w3-row w3-card w3-teal'>";
+	txt += "<div class='w3-row w3-card " + headerObj.class + "'>";
 		txt += "<div class='w3-third'><h3></h3></div>";
-		txt += "<div class='w3-third'><h3 class='w3-center'>" + headerObj.title + "</h3></div>";
+		txt += "<div class='w3-third'><h3 class='w3-center' id=" + headerId + "Title" + ">" + headerObj.title + "</h3></div>";
 	txt += "</div>";
-	document.getElementById(headerID).innerHTML = txt;
+	document.getElementById(headerId).innerHTML = txt;
 };
 
 function buildFooter(footerID, footerObj) {
+};
+
+function buildTabBar(tabBarId, tabBarObj) {
+	var txt = ""
+	txt += "<div class='w3-bar w3-gray' style='min-height:30px'>";
 	
+	var txtList = "";
+	for (item in tabBarObj) {
+		txtList += "<button id=" + item + " class='w3-bar-item w3-button tabBarItem' onClick='" + tabBarObj[item].function + "'>" + tabBarObj[item].title + "</button>";
+	};
+	txt += txtList;
+	txt += "</div>";
+
+	document.getElementById(tabBarId).innerHTML = txt;
 };
 
 function buildSideNavMenu(sideNavID, sideNavObj) {
 	//Build the side Nav and save it to the DOM
 	var txt = "";
-	txt += "<div class='w3-sidebar w3-bar-block w3-card w3-animate-left w3-light-gray' style='display:block'>";
+	txt += "<div class='w3-sidebar w3-animate-left w3-bar-block w3-card w3-light-gray' style='display:block'>";
 	txt += "<button class='w3-bar-item w3-large' onclick='closeSideNav(\"" + sideNavID + "\")'>Close &times;</button>";
 	
 	var txtList = "";
@@ -79,13 +93,13 @@ function closeSideNav(eleId) {
 	document.getElementById("openNav"+(divLevelNum)).style.visibility = "visible";
 };
 
-//Function to select a topic
+//Function to select a Side Nav Topic
 //	itemId - Side Nav menu item element id
 //	mainId - Window to display content in
 //	functionName - Content display function to call
 //	headerTitleId - Id for displaying header title
 //	headerTitle - Header Title to display
-function selectSideNavItem(itemId, mainId, functionName, headerTitleId, headerTitle ) {
+function selectSideNavItem(itemId, mainId, functionName, headerTitleId, headerTitle) {
 	//Highlight the topic that currently is selected, and unhighlight all the others
 	var itemList = document.getElementsByClassName("sideNavItem");
 	for (var i = 0; i < itemList.length; i++) {
@@ -100,3 +114,23 @@ function selectSideNavItem(itemId, mainId, functionName, headerTitleId, headerTi
 	eval(evalString);
 };
 
+//Function to select a tab bar topic
+//	itemId - Tab item element id
+//	mainId - Window to display content in
+//	functionName - Content display function to call
+//	headerTitleId - Id for displaying header title
+//	headerTitle - Header Title to display
+function selectTabBarItem(itemId, mainId, functionName, headerTitleId, headerTitle) {
+	//Highlight the topic that currently is selected, and unhighlight all the others
+	var itemList = document.getElementsByClassName("tabBarItem");
+	for (var i = 0; i < itemList.length; i++) {
+		if (itemList[i].id == itemId) {
+			itemList[i].className += " w3-hover-blue";
+		} else {
+		itemList[i].className = itemList[i].className.replace(" w3-hover-blue","");
+		};
+	};
+	//Call the content display function
+	var evalString = functionName + "(\"" + mainId + "\",\"" + headerTitleId + "\",\"" + headerTitle + "\")";
+	eval(evalString);
+};

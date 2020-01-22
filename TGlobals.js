@@ -2,12 +2,17 @@
 //Element types:  header, main, footer, sideNavMenu, sideNavMainHeader
 //Type main and can have nested sub-elements, but the other types just have attributes that define the elements
 var uiWindowObj2 = {
-	header1: {title: "This is the uiWindowObj Header",},
+	header1: {title: "This is the uiWindowObj Header", class: "w3-teal"},
 	main1: {
+		/*tabBar2: {
+			tB201: {title: "Introduction", function: "selectTabBarItem(\"tB201\", \"main2\", \"displayIntroduction\", \"header2Title\", \"Introduction\")"},
+			tB202: {title: "Upland Birds", function: "selectTabBarItem(\"tB202\", \"main2\", \"displayLesson\", \"header2Title\", \"Upland Birds\")"},
+		},*/
 		sideNavMenu2: {
 			item01: {title: "Introduction", function: "selectSideNavItem(\"item01\", \"main3\", \"displayIntroduction\", \"sideNavMainHeader2Title\", \"Introduction\")"},
 			item02: {title: "Upland Birds", function: "selectSideNavItem(\"item02\", \"main3\", \"displayLesson\", \"sideNavMainHeader2Title\", \"Upland Birds\")"},
 		},
+		/*header2: {title: "This is the default inner header", class: ""},*/
 		main2: {
 			sideNavMainHeader2: {title: "This is the default inner header",},
 			main3: {
