@@ -4,6 +4,7 @@ buildWindow('window', uiWindowObj2);
 //openSideNav('main2');
 //openSideNav('main4');
 
+document.getElementById("tB201").click()
 
 
 function displayIntroduction(eleId, titleId, title) {

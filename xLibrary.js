@@ -36,7 +36,7 @@ function buildFooter(footerID, footerObj) {
 
 function buildTabBar(tabBarId, tabBarObj) {
 	var txt = ""
-	txt += "<div class='w3-bar w3-gray' style='min-height:30px'>";
+	txt += "<div class='w3-bar w3-light-gray' style='min-height:30px'>";
 	
 	var txtList = "";
 	for (item in tabBarObj) {
@@ -126,8 +126,10 @@ function selectTabBarItem(itemId, mainId, functionName, headerTitleId, headerTit
 	for (var i = 0; i < itemList.length; i++) {
 		if (itemList[i].id == itemId) {
 			itemList[i].className += " w3-hover-blue";
+			itemList[i].className += " w3-blue";
 		} else {
 		itemList[i].className = itemList[i].className.replace(" w3-hover-blue","");
+		itemList[i].className = itemList[i].className.replace(" w3-blue","");
 		};
 	};
 	//Call the content display function
